@@ -18,6 +18,11 @@
                 "suisse" => "suisse",
                 _ => "autre"
             };
+
+			Console.WriteLine("Quel âge avez-vous ?");
+			string userInput = Console.ReadLine();
+			int yearsOld = int.Parse(userInput);
+			Console.WriteLine($"Vous êtes {resident} et âgé de {yearsOld} an{((yearsOld > 1)? "s" : "")}.");
         }
     }
 }
