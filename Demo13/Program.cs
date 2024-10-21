@@ -23,17 +23,17 @@
 						Console.WriteLine(option);
 					}
 				}
-				Console.WriteLine("(M)onter - (D)escendre - (V)alider");
+				Console.WriteLine("↑ (M)onter - ↓ (D)escendre - \"Enter\" / (V)alider");
 				userChoice = Console.ReadKey(true).Key;
-				if (userChoice == ConsoleKey.M && selectedPosition > 0)
+				if ((userChoice == ConsoleKey.M || userChoice == ConsoleKey.UpArrow) && selectedPosition > 0)
 				{
 					selectedPosition--;
 				}
-				else if (userChoice == ConsoleKey.D && selectedPosition < menuOptions.Length - 1)
+				else if ((userChoice == ConsoleKey.D || userChoice == ConsoleKey.DownArrow) && selectedPosition < menuOptions.Length - 1)
 				{
 					selectedPosition++;
 				} 
-			} while (userChoice != ConsoleKey.V);
+			} while (userChoice != ConsoleKey.V && userChoice != ConsoleKey.Enter);
 
 			Console.WriteLine($"Vous avez choisi : {menuOptions[selectedPosition]}");
 		}
