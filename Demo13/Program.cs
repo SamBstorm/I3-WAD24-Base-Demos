@@ -6,7 +6,7 @@
 		{
 			string[] menuOptions = { "Femme", "Homme", "Autre" };
 			int selectedPosition = 0;
-			string userChoice;
+			ConsoleKey userChoice;
 			do
 			{
 				Console.Clear();
@@ -24,16 +24,16 @@
 					}
 				}
 				Console.WriteLine("(M)onter - (D)escendre - (V)alider");
-				userChoice = Console.ReadLine().ToUpper();
-				if (userChoice == "M" && selectedPosition > 0)
+				userChoice = Console.ReadKey(true).Key;
+				if (userChoice == ConsoleKey.M && selectedPosition > 0)
 				{
 					selectedPosition--;
 				}
-				else if (userChoice == "D" && selectedPosition < menuOptions.Length - 1)
+				else if (userChoice == ConsoleKey.D && selectedPosition < menuOptions.Length - 1)
 				{
 					selectedPosition++;
 				} 
-			} while (userChoice != "V");
+			} while (userChoice != ConsoleKey.V);
 
 			Console.WriteLine($"Vous avez choisi : {menuOptions[selectedPosition]}");
 		}
