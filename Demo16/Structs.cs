@@ -12,6 +12,7 @@ namespace Demo16
 
         public void ChangeColor()
         {
+            /*
             switch (color)
             {
                 case TrafficLightColor.Red:
@@ -26,7 +27,9 @@ namespace Demo16
                 default:
                     color = TrafficLightColor.Red;
                     break;
-            }
+            }*/
+
+            color = (TrafficLightColor)((((int)color)+1)%3);
         }
     }
 }
